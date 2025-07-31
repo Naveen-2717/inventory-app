@@ -38,6 +38,8 @@ A complete e-commerce platform with separate customer and admin portals built wi
 
 ## 🔧 Installation & Setup
 
+> **Windows Users**: If you encounter issues, see [WINDOWS_SETUP.md](WINDOWS_SETUP.md) for detailed troubleshooting.
+
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
@@ -46,6 +48,17 @@ A complete e-commerce platform with separate customer and admin portals built wi
 
 2. **Install dependencies**
    ```bash
+   npm install
+   ```
+
+   **If you get dependency errors (especially on Windows):**
+   ```bash
+   # Clean installation
+   rm -rf node_modules package-lock.json  # Linux/Mac
+   # OR
+   rmdir /s node_modules && del package-lock.json  # Windows
+   
+   npm cache clean --force
    npm install
    ```
 
@@ -72,7 +85,14 @@ A complete e-commerce platform with separate customer and admin portals built wi
    sudo service mongod start
    ```
 
-5. **Seed the Database**
+5. **Test the Setup (Recommended)**
+   ```bash
+   npm run test
+   ```
+   
+   This will verify your MongoDB connection is working properly.
+
+6. **Seed the Database**
    ```bash
    npm run seed
    ```
@@ -82,7 +102,7 @@ A complete e-commerce platform with separate customer and admin portals built wi
    - Sample customers and products
    - Default settings
 
-6. **Start the Application**
+7. **Start the Application**
    ```bash
    # Development mode with auto-reload
    npm run dev
@@ -91,7 +111,7 @@ A complete e-commerce platform with separate customer and admin portals built wi
    npm start
    ```
 
-7. **Access the Application**
+8. **Access the Application**
    - **Customer Portal**: http://localhost:3000
    - **Admin Portal**: http://localhost:3000/admin
 
